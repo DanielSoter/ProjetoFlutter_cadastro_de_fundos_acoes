@@ -1,3 +1,4 @@
+import 'package:cadfin_projeto_flutter/Funcoes/Login.funcoes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -32,12 +33,15 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     TextFormField(
                       controller: _controllerEmail,
+                      validator:(valor)=> LoginFuncao().validarEmail(valor),
                       decoration: InputDecoration(
                         hintText: "E-mail",
                       ),
                     ),
                     TextFormField(
                       controller: _controllerSenha,
+                      validator: (valor)=> LoginFuncao().validarSenha(valor),
+                      obscureText: true,
                       decoration: InputDecoration(
                         hintText: "Senha",
                       ),
@@ -66,7 +70,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
               ),
                 onPressed: () {
-                  print("teste1");
+                  if(_formState.currentState.validate()){
+                    print(_controllerEmail.text.trim());
+                    print(_controllerSenha.text.trim());
+                  }
                 },
               ),
             ),
