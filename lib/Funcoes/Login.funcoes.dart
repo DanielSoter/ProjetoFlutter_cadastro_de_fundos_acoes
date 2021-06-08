@@ -1,7 +1,7 @@
 class LoginFuncao{
   String validarEmail(String valor){
     String p =
-        r'([a-z0-9] [- A-z0-9_ +.] [a-z0-9]) @ ([a-z0-9] [-. a-z0-9] [um-z0 -9] (com | net) |. (. [0-9] {1,3} {3} [0-9] {1,3}))';
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
     RegExp regExp = new RegExp(p);
     if(valor.isEmpty){
       return "Informe um e-mail!";
