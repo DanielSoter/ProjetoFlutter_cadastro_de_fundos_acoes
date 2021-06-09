@@ -1,4 +1,5 @@
 import 'package:cadfin_projeto_flutter/Funcoes/Login.funcoes.dart';
+import 'package:cadfin_projeto_flutter/Rotas/Rotas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -160,9 +161,10 @@ class _LoginPageState extends State<LoginPage> {
                     color: Theme.of(context).primaryColor,
                   ),
                 ),
-                onPressed: () {
-
-                },
+                onPressed: () => Navigator.pushNamed(
+                  context,
+                  AppRotas.CADASTRO,
+                ),
               ),
             ),
             ],
